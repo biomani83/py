@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline 
+
+df= pd.read_csv("sample_data.csv")
+df.head()
+sns.barplot(x="Samples", y="Value", color='#706c6f', errwidth=1.5, capsize=.2, ci="sd", edgecolor=".2", linewidth=1.0, data=df)
+plt.rcParams['figure.figsize']=(2,4)
+plt.rcParams['font.family'] = "Arial"
+bar_width = 0.15
+plt.xlabel('Control', fontsize=12)
+plt.ylabel('Relative CLas titer(%)', fontsize=12)
+plt.xticks(rotation=90) 
+plt.tight_layout() 
+plt.savefig('our_plot_name.jpg', format='jpeg', dpi=300)
+
+Bar_dot graph
+sns.barplot(x="Samples", y="Value", color='#706c6f', errwidth=1.5, capsize=.2, ci="sd", edgecolor=".2", linewidth=1.0, data=df)
+sns.swarmplot(x="Samples", y="Value", data=df, color="red", size=4, alpha=.9)
+plt.xticks(rotation=90)
+plt.xlabel('Control', fontsize=12)
+plt.ylabel('Relative CLas titer(%)', fontsize=12)
+plt.rcParams['figure.figsize']=(2,4)
+plt.rcParams['font.family'] = "Arial"
+plt.tight_layout() 
+plt.savefig('mani.jpg', format='jpeg', dpi=300)
+plt.show()
